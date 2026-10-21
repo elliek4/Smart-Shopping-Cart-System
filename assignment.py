@@ -58,7 +58,7 @@ def display_products():
     print()
 
 # function for option 2 that asks user which product they want to purchase and adds it to their shopping list
-def add_product():
+def add_product(shopping_cart):
     print("Which product would you like to add?")
     print()
     for i in range(6):
@@ -82,7 +82,7 @@ def add_product():
     print()
 
 # function for option 3 that displays shopping cart and allows removal of items
-def remove_product():
+def remove_product(shopping_cart):
     if len(shopping_cart) == 0:
         print("Your shopping cart is empty!")
         print("There is nothing to remove.")
@@ -119,7 +119,7 @@ def remove_product():
         print()
 
 # function for option 4 that displays every product and its price in shopping cart
-def display_cart():
+def display_cart(shopping_cart):
     if len(shopping_cart) == 0:
         print("There is nothing currently in your shopping cart.")
         print()
@@ -183,19 +183,19 @@ while user_choice != 6:
     # checks if user chose option 2, then calls adding product function, afterwards returns back to menu
     elif user_choice == 2:
         
-        add_product()
+        add_product(shopping_cart)
         user_choice = display_menu()
 
     # checks if user chose option 3, then calls removing product function, afterwards returns back to menu
     elif user_choice == 3:
 
-        remove_product()
+        remove_product(shopping_cart)
         user_choice = display_menu()
 
     # checks if user chose option 4, then calls display shopping cart function, afterwards returns back to menu
     elif user_choice == 4:
         
-        display_cart()
+        display_cart(shopping_cart)
         user_choice = display_menu()
 
     # checks if user chose option 5, then calls calculate subtotal function, afterwards returns back to menu
